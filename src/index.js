@@ -17,10 +17,10 @@ const httpLink = new HttpLink({
   uri: 'https://main.dslriwa6h76ii.amplifyapp.com'
 })
 
-const wsLink = new WebSocketLink({
+/*const wsLink = new WebSocketLink({
   uri: `wss://main.dslriwa6h76ii.amplifyapp.com`,
   options: {reconnect: true}
-})
+})*/
 
 const link = split(
   ({query}) => {
