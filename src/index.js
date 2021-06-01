@@ -18,7 +18,7 @@ const httpLink = new HttpLink({
 })
 
 const wsLink = new WebSocketLink({
-  uri: `https://main.dslriwa6h76ii.amplifyapp.com`,
+  uri: `wss://main.dslriwa6h76ii.amplifyapp.com`,
   options: {reconnect: true}
 })
 
