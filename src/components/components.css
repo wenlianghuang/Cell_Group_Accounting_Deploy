@@ -1,0 +1,78 @@
+.CannotSignIn{
+    position: relative;
+    top: 10px;
+    left: 10;
+    font-size: 2.0em;
+    color: red;
+}
+
+.FirstPageLabel{
+    font-size:30px ;
+    font-family: Luminari, fantasy;
+}
+
+.FirstPageLabelInputPadding{
+    padding: 20px;
+}
+
+.round-button {
+    display:block;
+    width:100px;
+    height:100px;
+    line-height:100px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #555777;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+    position: relative;
+    top: 40px;
+}
+.round-button:hover {
+    background: #777555;
+}
+
+.cursor {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fefefe;
+    border-radius: 100%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 150ms ease;
+    transition-property: background-color, opacity, transform, mix-blend-mode;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.cursor--hidden {
+    opacity: 0;
+}
+
+.cursor--link-hovered {
+    transform: translate(-50%, -50%) scale(1.25);
+    background-color: #fefefe;
+}
+
+.cursor--clicked {
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: #fefefe;
+}
+
+/*html,
+body {
+    cursor: none;
+    background-color: #121212;
+    color: #fefefe;
+    font-family: "Space Mono", sans-serif;
+}
+
+html *,
+body * {
+    cursor: none;
+}*/
