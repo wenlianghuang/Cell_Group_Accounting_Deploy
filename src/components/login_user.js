@@ -50,7 +50,7 @@ export default function LogInUser(){
             setPassword('')
         })
         .catch((error)=>{
-            console.log("error")
+            console.log(error)
         })
     }
     return (
