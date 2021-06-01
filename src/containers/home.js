@@ -41,7 +41,6 @@ function Home(){
             <Switch>
                 <Route exact path="/after_login_page" component={AfterLoginPage}/>
                 <Route path="/after_login_page/stock_platform" component={Stock_Platform}/>
-                {/*<Route path="/after_login_page/stock_platform/Deal" component={Deal}/>*/}
                 <Route path="/after_login_page/Deal" component={Deal}/>
                 <Route path="/after_login_page/delete_content" component={DeleteContent}/>
                 <Route path="/after_login_page/stock_platform/Expenses/Food" component={Food}/>

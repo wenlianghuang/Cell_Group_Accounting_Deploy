@@ -19,7 +19,7 @@ import Paper from '@material-ui/core/Paper';
 import './components.css';
 import { ProvideAuth,PrivateRoute,ProtectedPage,LoginPage,AuthButton,useAuth,Stock_AuthButton,To_Deal,Back_To_Platform } from './use-auth';
 import {NameandPassword_Login,YourID} from './login_user';
-
+import {Endpoint} from '../GlobalEndPoint'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -42,40 +42,13 @@ export default function Stock_Platform() {
     const useContextNameandPassword = useContext(NameandPassword_Login);
     const useContextName = useContextNameandPassword;
     const useContextYourID = useContext(YourID);
-    let endpoint = "http://localhost:8080"
+    //let endpoint = "http://localhost:8080"
 
     
     
-    /*
-    useEffect(()=>{
-        subscribeToMore({
-            document: STOCK_SUBSCRIPTION,
-            updateQuery: (prev,{subscriptionData})=>{
-                console.log("stock platform subscription: ",subscriptionData.data.stockcontent.data);
-                console.log("prev: ",prev)
-                if(!subscriptionData) return prev
-                const newStock = subscriptionData.data.stockcontent.data
-                return{
-                    ...prev,
-                    stockcontent: [...prev.stockcontent,newStock]
-                }
-            }
-        })
-    },[subscribeToMore])
-    */
+    
 
-    /*const handleNameorNumber = (e) => {
-        setStockName(e.target.value);
-    }
-
-    const handleNumber = (e) =>{
-
-        setStockNumber(e.target.value);
-    }*/
-
-    /*const handlePrice = (e) =>{
-        setStockPrice(e.target.value);
-    }*/
+    
     const handleItem = (e) => {
         setItem(e.target.value)
     }
@@ -108,7 +81,7 @@ export default function Stock_Platform() {
         event.preventDefault();
         await axios
             .post(
-                endpoint + "/api/accounting/" + useContextYourID ,
+                Endpoint + "/api/accounting/" + useContextYourID ,
             {
                 item: item,
                 buyorsell: buyorsell,

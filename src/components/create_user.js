@@ -5,6 +5,7 @@ import {useStyles} from './decoration/stock_decoration'
 import axios from 'axios'
 import "./components.css"
 import Cursor_Pointer from './cursor_pointer'
+import {Endpoint} from '../GlobalEndPoint'
 export default function CreateUse() {
     const [name,setName] = useState('');
     const [password,setPassword] = useState('');
@@ -15,7 +16,7 @@ export default function CreateUse() {
     
     const classes = useStyles()
 
-    let endpoint = "http://localhost:8080";
+    //let endpoint = "http://localhost:8080";
     
     let initmoney = parseInt(total_money);
     const handleCreate = async (e) => {
@@ -27,7 +28,7 @@ export default function CreateUse() {
         }
         await axios
             .post(
-                endpoint + "/api/accounting",
+                Endpoint + "/api/accounting",
                 {
                     account: name,
                     password: password,

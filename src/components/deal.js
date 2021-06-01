@@ -10,12 +10,7 @@ import {stockfromplatform}  from './stock_platform';
 import {Account_Total_Money} from './login_user';
 import {fullDate} from './stock_platform';
 
-//Graphql
-import {useQuery} from '@apollo/react-hooks';
-import {
-    STOCK_QUERY,
-    STOCK_SUBSCRIPTION,
-} from '../graphql';
+import {Endpoint} from '../GlobalEndPoint'
 import {Stock_AuthButton,To_Deal } from './use-auth';
 
 //About Table Module
@@ -39,7 +34,7 @@ import axios from 'axios';
 
 
 export default function Deal(){
-    let endpoint = "http://localhost:8080";
+    //let endpoint = "http://localhost:8080";
     const classes = useDealStyles();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -72,7 +67,7 @@ export default function Deal(){
     const handleDetail = async (event) => {
         event.preventDefault();
         console.log("deal id: ",useContextYourID)
-        await axios.get( endpoint + "/api/accounting/" + useContextYourID).then((res)=>{
+        await axios.get( Endpoint + "/api/accounting/" + useContextYourID).then((res)=>{
           if(res.data){
             setTotal_Money(res.data.initmoney)
             for(let i = 0; i < res.data.subtest.length;i++){

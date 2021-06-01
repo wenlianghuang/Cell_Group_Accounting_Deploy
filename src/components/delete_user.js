@@ -3,6 +3,7 @@ import React,{useState,useEffect, useCallback} from 'react';
 import axios from 'axios'
 import { Alert, AlertTitle } from '@material-ui/lab';
 import {useStyles} from './decoration/stock_decoration'
+import {Endpoint} from '../GlobalEndPoint'
 export default function ChangePassword(){
     const classes = useStyles()
     const [name,setName] = useState('');
@@ -11,12 +12,12 @@ export default function ChangePassword(){
     const [total_money,setTotalMoney] = useState(0);
     const [correct,setCorrect] = useState(false);
     const [correctmsg,setCorrectMSG] = useState('');
-    let endpoint = "http://localhost:8080"
+    //let endpoint = "http://localhost:8080"
     
     
     const getDeleteLogIn = async (event)=>{
         event.preventDefault()
-        await axios.get(endpoint + "/api/accounting").then((res)=>{
+        await axios.get(Endpoint + "/api/accounting").then((res)=>{
             console.log("name: " + name + " email: " + email + " password: " + password)
             for(let i = 0; i < res.data.length;i++){
                 if(name === res.data[i].account && email === res.data[i].email && password === res.data[i].password){
@@ -36,7 +37,7 @@ export default function ChangePassword(){
     }
 
     const handleDeleteLogIn = async (id) => {
-        await axios.delete(endpoint + "/api/deleteAccount/" + id,{
+        await axios.delete(Endpoint + "/api/deleteAccount/" + id,{
             account: name,
             password: password,
             email: email,

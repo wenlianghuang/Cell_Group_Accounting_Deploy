@@ -3,6 +3,7 @@ import React,{useState,useEffect, useCallback} from 'react';
 import axios from 'axios'
 import {useStyles} from './decoration/stock_decoration'
 import { Alert, AlertTitle } from '@material-ui/lab';
+import {Endpoint}  from '../GlobalEndPoint'
 export default function ChangePassword(){
     const classes = useStyles()
     const [name,setName] = useState('');
@@ -11,12 +12,12 @@ export default function ChangePassword(){
     const [correct,setCorrect] = useState(false);
     const [correctmsg,setCorrectMSG] = useState('');
     
-    let endpoint = "http://localhost:8080"
+    //let endpoint = "http://localhost:8080"
     
     
     const getLogIn = async(event) => {
         event.preventDefault();
-        await axios.get(endpoint + "/api/accounting").then((res)=>{
+        await axios.get(Endpoint + "/api/accounting").then((res)=>{
             console.log("name: " + name + " email: " + email)
             for(let i = 0; i < res.data.length;i++){
                 if(name === res.data[i].account && email === res.data[i].email){
@@ -33,7 +34,7 @@ export default function ChangePassword(){
         
     }
     const handleUpdateLogIn = async (id) => {
-        await axios.put(endpoint + "/api/changePW/" + id,{
+        await axios.put(Endpoint + "/api/changePW/" + id,{
             account: name,
             password: password,
             email: email,

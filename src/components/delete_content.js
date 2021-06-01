@@ -12,6 +12,7 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Radio from '@material-ui/core/Radio'
 import {Stock_AuthButton,To_Deal,Back_To_Platform} from './use-auth'
+import {Endpoint} from '../GlobalEndPoint'
 export default function Delete_Content(){
     const [item,setItem] = useState('')
     const [buyorsell,setStockBuyorSell] = useState("buy");//true is "buy"
@@ -22,7 +23,7 @@ export default function Delete_Content(){
     const classes = useStyles();
     const useContextNameandPassword = useContext(NameandPassword_Login);
     const useContextYourID = useContext(YourID);
-    let endpoint = "http://localhost:8080"
+    //let endpoint = "http://localhost:8080"
 
     const handleItem = (e) => {
         setItem(e.target.value)
@@ -41,7 +42,7 @@ export default function Delete_Content(){
     
     const getDeleteContent = async (event)=>{
         event.preventDefault()
-        await axios.get(endpoint + "/api/accounting/" + useContextYourID).then((res)=>{
+        await axios.get(Endpoint + "/api/accounting/" + useContextYourID).then((res)=>{
             //console.log("name: " + name + " email: " + email + " password: " + password)
             console.log("res.data.subtest: ",res.data.subtest)
             let Intprice = parseInt(price)
@@ -64,7 +65,7 @@ export default function Delete_Content(){
         //event.preventDefault();
         await axios
             .put(
-                endpoint + "/api/deleteCount/" + id ,
+                Endpoint + "/api/deleteCount/" + id ,
             {
                 item: item,
                 buyorsell: buyorsell,
