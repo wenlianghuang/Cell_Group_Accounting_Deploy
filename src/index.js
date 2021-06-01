@@ -30,7 +30,7 @@ const link = split(
       definition.operation === 'subscription'
     )
   },
-  wsLink,
+  //wsLink,
   httpLink
 )
 
