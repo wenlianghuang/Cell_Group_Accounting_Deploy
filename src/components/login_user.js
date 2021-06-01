@@ -5,6 +5,7 @@ import "./components.css";
 
 import { ProvideAuth,PrivateRoute,ProtectedPage,LoginPage,AuthButton,useAuth } from './use-auth';
 import {useStyles} from './decoration/stock_decoration'
+import {Endpoint} from '../GlobalEndPoint'
 export let NameandPassword_Login = {};//Stock Platform will recieve this variable of name and password
 export let Account_Total_Money = ''
 export let YourID = {}
@@ -27,10 +28,10 @@ export default function LogInUser(){
         });
     };
     
-    let endpoint = "http://localhost:8080"
+    //let endpoint = "http://localhost:8080"
     const handleCreate = async (e) => {
         e.preventDefault()
-        await axios.get(endpoint + "/api/accounting").then((res)=>{
+        await axios.get(Endpoint + "/api/accounting").then((res)=>{
             if(res.data){
                 console.log(res.data[0].account)
                 for(let i = 0; i < res.data.length;i++){
