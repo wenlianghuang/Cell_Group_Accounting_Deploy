@@ -70,8 +70,8 @@ func CreateAccount(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencode")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
+	//w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
 	var task models.Account_Password
 
 	_ = json.NewDecoder(r.Body).Decode(&task)
@@ -93,6 +93,7 @@ func insertOneTask(task models.Account_Password) {
 func GetAllAccount(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencode")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
 
 	payload := getAllAccount()
 	json.NewEncoder(w).Encode(payload)
@@ -130,7 +131,9 @@ func AddSubItem(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Contexxt-Type", "application/x-www-form-urlencoder")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	//w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
+
 	params := mux.Vars(r)
 	id, _ := primitive.ObjectIDFromHex(params["id"])
 	filter := bson.M{"_id": id}
@@ -178,7 +181,8 @@ func ChangePW(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencoder")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "PUT")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	//w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
 
 	params := mux.Vars(r)
 	id, _ := primitive.ObjectIDFromHex(params["id"])
@@ -201,7 +205,9 @@ func GetOneAccount(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencode")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	//w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
+
 	params := mux.Vars(r)
 	docID, _ := primitive.ObjectIDFromHex(params["id"])
 	var result bson.M
@@ -218,7 +224,9 @@ func DeleteOneAccount(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "DELETE")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	//w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
+
 	params := mux.Vars(r)
 	id, _ := primitive.ObjectIDFromHex(params["id"])
 	filter := bson.M{"_id": id}
@@ -236,7 +244,9 @@ func DeleteOneContent(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "PUT")
-	w.Header().Set("Access-Control-Aloow-Headers", "Content-Type")
+	//w.Header().Set("Access-Control-Aloow-Headers", "Content-Type")
+	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Authorization")
+
 	params := mux.Vars(r)
 	id, _ := primitive.ObjectIDFromHex(params["id"])
 	filter := bson.M{"_id": id}
