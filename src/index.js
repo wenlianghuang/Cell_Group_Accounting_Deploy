@@ -13,7 +13,7 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities';
 
 
-/*
+
 //using function 'HttpLink' by 'apollo-link-http' library that using the uri for server
 const httpLink = new HttpLink({
   uri: 'https://main.dslriwa6h76ii.amplifyapp.com'
@@ -49,12 +49,13 @@ const wrapperApollo = (
 ReactDOM.render(
   wrapperApollo ,
   document.getElementById('root')
-);*/
+);
+/*
 ReactDOM.render(
   <App/>,
   document.getElementById('root')
 )
-
+*/
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
