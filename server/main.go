@@ -12,7 +12,7 @@ import (
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "9080"
+		port = "5000"
 	}
 	r := router.Router()
 
