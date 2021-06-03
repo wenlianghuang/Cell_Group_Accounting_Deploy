@@ -4,7 +4,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import {Route,Redirect,useHistory,useLocation,Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import homearr from '../externalHomearr'
+import homearr from '../externalHomeArr'
 /*firebase.initializeApp({
     apiKey: "",
     authDomain: "",
