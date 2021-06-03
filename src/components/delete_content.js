@@ -90,7 +90,7 @@ export default function Delete_Content(){
     }
 
     return(
-    <>
+    <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
                 歡迎來到 {useContextNameandPassword} 日常收支表
@@ -165,6 +165,6 @@ export default function Delete_Content(){
                 )}
             </div>
         </form>
-    </>
+    </div>
     )
 }

@@ -97,15 +97,15 @@ export default function ChangePassword(){
                 </div>
                 <div className="FirstPageLabelInputPadding">
                     {correct ? (
-                        <>
+                        <div>
                         <input type="submit" value="Delete Account" className="btn btn-success btn-block" style={{width:"400px",margin:"auto"}} />
                         <p className="CannotSignIn">{correctmsg}</p>
-                        </>
+                        </div>
                     ):(
-                        <>
+                        <div>
                         <input type="submit" value="Delete Account" className="btn btn-success btn-block" style={{width:"400px",margin:"auto"}}/>
                         <p className="CannotSignIn">{correctmsg}</p>
-                        </>
+                        </div>
                     )}
                 </div>
             </form>

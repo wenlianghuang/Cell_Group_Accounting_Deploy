@@ -81,13 +81,13 @@ export default function LogInUser(){
                 
                 <div className="FirstPageLabelInputPadding"> 
                     {correct?(
-                        <>
+                        <div>
                         <input type="submit" value="Sign in" onClick={login()} className="btn btn-success btn-block" style={{width:"400px",margin:"auto"}}/>
-                        </>
-                    ):(<>
+                        </div>
+                    ):(<div>
                         <input type="submit" value="Sign in" className="btn btn-success btn-block" style={{width:"400px",margin:"auto"}} />
                         <p className="CannotSignIn">{correctmsg}</p>
-                       </>
+                       </div>
                     )
                     }
                 </div>

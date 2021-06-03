@@ -13,7 +13,7 @@ export default function After_Login_Page(){
     const goto_delete_content = () => (history.push("/after_login_page/delete_content"))
     const goto_todeal = () => (history.push("/after_login_page/Deal"))
     return(
-        <>
+        <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
                 歡迎來到 {useContextName} 日常收支表
@@ -32,6 +32,6 @@ export default function After_Login_Page(){
             <Button onClick={goto_delete_content} style={{fontSize:"43px",fontFamily:"標楷體",top:"200px",width:"200px",left:"200px",height:"100px",color:"#ffb366"}} variant="outlined" backgroundColor="transparent">刪除</Button>
             <Button onClick={goto_todeal} style={{fontSize:"43px",fontFamily:"標楷體",top:"200px",width:"200px",left:"400px",height:"100px",color:"#E83195"}} variant="outlined" backgroundColor="transparent">結餘</Button>
         </div>
-        </>
+        </div>
     )
 }

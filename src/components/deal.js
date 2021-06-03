@@ -90,7 +90,7 @@ export default function Deal(){
     
     console.log("total_money: ",total_money)
     return(
-        <>
+        <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
                 歡迎來到 {useContextName} 日常收支表
@@ -110,7 +110,7 @@ export default function Deal(){
         <div className={classes.pageStyle}>
             
             {deal ? (
-                <>
+                <div>
                 
                 <h3 style={{fontFamily:"fantasy"}}>Bank Account Balance: {total_money}</h3>
                 
@@ -170,7 +170,7 @@ export default function Deal(){
               
               
               
-              </>
+              </div>
             ):(
                 
                 <Button onClick={handleDetail} style={{top:"100px",width:"400px"}} variant="outlined" color="primary" backgroundColor="transparent" >請看收入支出明細</Button>
@@ -180,7 +180,7 @@ export default function Deal(){
             )}
 
         </div>
-        </>
+        </div>
                 
     )
 }

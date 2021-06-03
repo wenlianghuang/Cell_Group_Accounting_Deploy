@@ -108,7 +108,7 @@ export default function Stock_Platform() {
 
 
     return(
-        <>
+        <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
                 歡迎來到 {useContextName} 日常收支表
@@ -181,6 +181,6 @@ export default function Stock_Platform() {
                 )}
             </div>
         </form>
-        </>
+        </div>
     )
 }
