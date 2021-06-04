@@ -4,7 +4,6 @@ import React, {useState,useEffect,useCallback} from 'react';
 import {useStyles} from './decoration/stock_decoration'
 import axios from 'axios'
 import "./components.css"
-import Cursor_Pointer from './cursor_pointer'
 import {Endpoint} from '../GlobalEndPoint'
 export default function CreateUse() {
     const [name,setName] = useState('');
@@ -53,7 +52,6 @@ export default function CreateUse() {
 
         return (
             <div className={classes.homepage}>
-                <Cursor_Pointer/>
                 <div style={{position:"relative",top:"20px"}}>
                 <form onSubmit={handleCreate}>
                     <div className="FirstPageLabelInputPadding">
