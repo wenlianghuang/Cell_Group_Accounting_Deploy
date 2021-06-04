@@ -18,7 +18,7 @@ func main() {
 
 	fmt.Println("Starting server on: ", port)
 
-	log.Fatal(http.ListenAndServe(":"+port, r))
+	log.Fatal(http.ListenAndServe("cell-group-accounting.herokuapp.com:"+port, r))
 
 	//log.Fatal(http.ListenAndServe("main.dslriwa6h76ii.amplifyapp.com:"+port, r))
 }
