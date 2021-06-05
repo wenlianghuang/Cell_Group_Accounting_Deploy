@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"backend/router"
+	"github.com/CellGroup/server/router"
 )
 
 func main() {
@@ -19,5 +19,4 @@ func main() {
 	fmt.Println("Starting server on: ", port)
 
 	log.Fatal(http.ListenAndServe(":"+port, r))
-
 }

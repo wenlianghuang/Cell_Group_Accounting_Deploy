@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"backend/models"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -9,6 +8,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/CellGroup/server/models"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
@@ -20,15 +20,16 @@ import (
 var collection *mongo.Collection
 
 func init() {
-	loadTheEnv()
+	TheEnv()
 	createDBInstance()
 }
-
-func loadTheEnv() {
-	err := godotenv.Load(".env")
+func TheEnv() {
+	err := godotenv.Load("./server/.env")
 
 	if err != nil {
 		log.Fatalf("Error loading .env file")
+	} else {
+		fmt.Println("Success")
 	}
 }
 

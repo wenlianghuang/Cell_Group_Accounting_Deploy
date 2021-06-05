@@ -1,8 +1,7 @@
 package router
 
 import (
-	"backend/middleware"
-
+	"github.com/CellGroup/server/middleware"
 	"github.com/gorilla/mux"
 )
 
