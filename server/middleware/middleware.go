@@ -24,7 +24,7 @@ func init() {
 	createDBInstance()
 }
 func TheEnv() {
-	err := godotenv.Load("./server/.env")
+	err := godotenv.Load("/Users/Apple/GoogleMatt/Web Programming/Cell_Group_Accounting_Deploy/server/.env")
 
 	if err != nil {
 		log.Fatalf("Error loading .env file")
