@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "watch":{
+  "watch": {
     "extensions": "js, feature, go"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "cd server && go install && go run main.go",
+    "postbuild": "cd server && go run main.go",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
