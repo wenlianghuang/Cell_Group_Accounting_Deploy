@@ -15,7 +15,6 @@ func main() {
 		port = "9080"
 	}
 	r := router.Router()
-
 	fmt.Println("Starting server on: ", port)
 
 	log.Fatal(http.ListenAndServe(":"+port, r))
