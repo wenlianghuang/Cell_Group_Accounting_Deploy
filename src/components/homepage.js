@@ -30,10 +30,13 @@ export default function HomePage(){
                 <li>Button the Log In, if you do not have the account, it will show error</li>
                 <li>Button the Create Account, add your user name, user password, user email and deposite your money</li>
                 <li>Log In to the accounting book page and you can see the using item, using type,the price of item, date, and to check it is income your expense</li>
-                <li>Press the button "交易" and the trade success</li>
+                <li>Then you will see three buttons "存入","刪除","結餘"</li>
+                <li>Press the button "存入" if you want to write down some items to the accounting book</li>
+                <li>Press the button "刪除" if you want to delete the item to the accounting book</li>
+                <li>Press the button "結餘" if you want to see the accounting book detail</li>
                 <li>Press the button "To Deal" of the upper right and it will redirect to your accounting page </li>
                 <li>Add the "請看收入支出明細" button and it will show the result</li>
-                <li>There are five bottom buttons(Food,Clothing,Accommodation,Transport,Others),you go into each page</li>
+                <li>Please email to "wenlianghuang@gmail.com" if you have any problem</li>
             </ol>
             </a.div>
         )}
