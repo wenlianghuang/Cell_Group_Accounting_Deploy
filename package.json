@@ -28,7 +28,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "cd server && go run main.go",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
