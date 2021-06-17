@@ -5,7 +5,10 @@ import {NameandPassword_Login} from './login_user'
 import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
+import {useSelector} from 'react-redux'
 export default function After_Login_Page(){
+    const accountUser = useSelector(state => state.login)
+    console.log("accountUser: ",accountUser)
     let useContextName = useContext(NameandPassword_Login)
     const classes = useStyles()
     const history = useHistory()
@@ -15,8 +18,11 @@ export default function After_Login_Page(){
     return(
         <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <li className="navbar-brand active">
+            {/*<li className="navbar-brand active">
                 歡迎來到 {useContextName} 日常收支表
+    </li>*/}
+            <li className="navbar-brand active">
+                歡迎來到 {accountUser}日常收支表
             </li>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">

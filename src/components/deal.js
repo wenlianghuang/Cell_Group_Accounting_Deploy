@@ -32,6 +32,7 @@ import {ShowYourList} from './decoration/stock_decoration';
 import {columns,useDealStyles} from './dealtable_detail';
 import axios from 'axios';
 
+import {useSelector} from 'react-redux'
 
 export default function Deal(){
     //let endpoint = "http://localhost:8080";
@@ -39,6 +40,7 @@ export default function Deal(){
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
+    const accountUser = useSelector(state => state.login)
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -93,7 +95,7 @@ export default function Deal(){
         <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
-                歡迎來到 {useContextName} 日常收支表
+                歡迎來到 {accountUser} 日常收支表
             </li>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">

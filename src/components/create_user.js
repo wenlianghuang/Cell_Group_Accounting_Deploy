@@ -5,6 +5,9 @@ import {useStyles} from './decoration/stock_decoration'
 import axios from 'axios'
 import "./components.css"
 import {Endpoint} from '../GlobalEndPoint'
+
+import allAction from "../store/action"
+import {useSelector,useDispatch} from 'react-redux'
 export default function CreateUse() {
     const [name,setName] = useState('');
     const [password,setPassword] = useState('');
@@ -15,6 +18,7 @@ export default function CreateUse() {
     
     const classes = useStyles()
 
+    const dispatch = useDispatch();
     //let endpoint = "http://localhost:8080";
     
     let initmoney = parseInt(total_money);
@@ -40,6 +44,7 @@ export default function CreateUse() {
                     },
                 }
             ).then((res)=>{
+                
                 setName('')
                 setPassword('')
                 setEmail('')

@@ -6,6 +6,10 @@ import "./components.css";
 import { ProvideAuth,PrivateRoute,ProtectedPage,LoginPage,AuthButton,useAuth } from './use-auth';
 import {useStyles} from './decoration/stock_decoration'
 import {Endpoint} from '../GlobalEndPoint'
+
+import allAction from "../store/action"
+import {useSelector,useDispatch} from 'react-redux'
+
 export let NameandPassword_Login = {};//Stock Platform will recieve this variable of name and password
 export let Account_Total_Money = ''
 export let YourID = {}
@@ -28,26 +32,36 @@ export default function LogInUser(){
         });
     };
     
+    const accountUser = useSelector(state => state.login)
+    const dispatch = useDispatch()
     //let endpoint = "http://localhost:8080"
     const handleCreate = async (e) => {
         e.preventDefault()
         await axios.get(Endpoint + "/api/accounting").then((res)=>{
             if(res.data){
-                console.log(res.data[0].account)
+
+                //console.log(res.data[0].account)
                 for(let i = 0; i < res.data.length;i++){
                     if(res.data[i].account === name && res.data[i].password === password){
                         setCorrect(true);
                         setCorrectmsg('Update the password successfully');
                         NameandPassword_Login = createContext( res.data[i].account );
                         YourID = createContext(res.data[i]._id)
+                        //addLogInAccount(res.data[i].account)
                         break;
                     }else{
                         setCorrectmsg('Account or Password is not correct,please check them or create a new account');
                     }
                 }
+                dispatch(allAction.loginaccount.addLogInAccount(name))
+                dispatch(allAction.loginaccount.addLogInPassword(password))
+                console.log("name: ",accountUser)
+                console.log("password: ",password)
             }
+            
             setName('')
             setPassword('')
+            
         })
         .catch((error)=>{
             console.log(error)

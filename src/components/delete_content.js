@@ -13,6 +13,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Radio from '@material-ui/core/Radio'
 import {Stock_AuthButton,To_Deal,Back_To_Platform} from './use-auth'
 import {Endpoint} from '../GlobalEndPoint'
+
+import {useSelector} from 'react-redux'
 export default function Delete_Content(){
     const [item,setItem] = useState('')
     const [buyorsell,setStockBuyorSell] = useState("buy");//true is "buy"
@@ -24,7 +26,7 @@ export default function Delete_Content(){
     const useContextNameandPassword = useContext(NameandPassword_Login);
     const useContextYourID = useContext(YourID);
     //let endpoint = "http://localhost:8080"
-
+    const accountUser = useSelector(state => state.login)
     const handleItem = (e) => {
         setItem(e.target.value)
     }
@@ -93,7 +95,7 @@ export default function Delete_Content(){
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
-                歡迎來到 {useContextNameandPassword} 日常收支表
+                歡迎來到 {accountUser} 日常收支表
             </li>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">

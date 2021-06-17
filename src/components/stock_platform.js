@@ -24,6 +24,7 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
+import {useSelector} from 'react-redux'
 
 
 export default function Stock_Platform() {
@@ -44,7 +45,7 @@ export default function Stock_Platform() {
     const useContextYourID = useContext(YourID);
     //let endpoint = "http://localhost:8080"
 
-    
+    const accountUser = useSelector(state => state.login)
     
     
 
@@ -111,7 +112,7 @@ export default function Stock_Platform() {
         <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <li className="navbar-brand active">
-                歡迎來到 {useContextName} 日常收支表
+                歡迎來到 {accountUser} 日常收支表
             </li>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
