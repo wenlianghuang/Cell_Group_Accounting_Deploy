@@ -5,12 +5,11 @@ import "firebase/auth";
 import {Route,Redirect,useHistory,useLocation,Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import homearr from '../externalHomeArr'
-/*firebase.initializeApp({
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    appID: ""
-});*/
+import {useheaderStyles} from "./decoration/stock_decoration"
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ClearAllIcon from '@material-ui/icons/ClearAll';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+
 const fakeAuth = {
     isAuthenticated: false,
     signin(cb) {
@@ -145,16 +144,16 @@ export function AuthButton() {
 export function Stock_AuthButton() {
   let history = useHistory();
   let auth = useAuth();
-  
+  const subclasses = useheaderStyles()
   return (
     <Button 
       variant="contained" 
       onClick={() => {
         auth.signout(()=>history.push("/"))
       }}
-      color="primary"
-      mr={3}
-      style={{padding:"15px"}}
+      className={subclasses.button}
+      style={{color: "white",backgroundColor:"#F69732"}}
+      endIcon={<ExitToAppIcon/>}
       >
         Sign out
       </Button>
@@ -163,15 +162,16 @@ export function Stock_AuthButton() {
 
 export function Back_To_Platform(){
   let history = useHistory()
+  const subclasses = useheaderStyles()
   return(
     <Button 
       variant="contained"
       onClick={()=>{
         history.push("/after_login_page")
       }}
-      color="primary"
-      mr={3}
-      style={{padding:"15px"}}
+      className={subclasses.button}
+      endIcon={<ClearAllIcon/>}
+      style={{color: "white",backgroundColor:"#BB73F4"}}
       >
         Back To Platform
       </Button>
@@ -183,15 +183,17 @@ export function To_Deal() {
   let handleHistory = () => {
     history.push('/after_login_page/Deal');
   }
+  const subclasses = useheaderStyles()
   return (
     <Button 
       variant="contained" 
       onClick={handleHistory
       }
-      color="primary"
-      style={{padding:"15px"}}
+      style={{color: "white",backgroundColor:"#ACE64C"}}
+      endIcon={<AccountBalanceIcon/>}
+      className={subclasses.button}
       >
-        To Deal
+        Balance
       </Button>
   )
 }

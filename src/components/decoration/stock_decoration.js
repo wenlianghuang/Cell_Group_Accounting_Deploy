@@ -113,7 +113,14 @@ const ShowYourList = withStyles({
     maxHeight: 440,
   }
 })*/
-
+const useheaderStyles = makeStyles(() => ({
+    button: {
+      margin:theme.spacing(2),
+      display: "block",
+      width: "150px",
+      top: "150px"
+    }
+}))
 const useStyles = makeStyles((theme) => ({
     root: {
     '& MuiTextField-root':{
@@ -145,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
       position:"relative"
     },
     button:{
-      top: theme.spacing(6),
+      top: theme.spacing(3),
       left: "100px",
       width: "30%",
       position: "relative",
@@ -168,4 +175,4 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export {useStyles,NameandNumberTextField,PriceTextField,DealBuyButton,DealSellButton,ShowYourList};
+export {useStyles,NameandNumberTextField,PriceTextField,DealBuyButton,DealSellButton,ShowYourList,useheaderStyles};

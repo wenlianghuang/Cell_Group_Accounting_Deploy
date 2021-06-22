@@ -1,6 +1,4 @@
 import React,{useState} from 'react';
-import {useHistory,useLocation} from 'react-router-dom'
-import { yellow } from '@material-ui/core/colors';
 import {useStyles} from './decoration/stock_decoration'
 import {useSpring,animated as a} from 'react-spring'
 import './components.css'

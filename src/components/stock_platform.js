@@ -1,6 +1,7 @@
 import React,{useState,useEffect,useContext,useCallback,createContext} from 'react';
 import axios from 'axios'
 import {useStyles,
+        useheaderStyles,
         NameandNumberTextField,
         BootstrapInput,
         PriceTextField,
@@ -15,30 +16,27 @@ import CheckBox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 
-import Paper from '@material-ui/core/Paper';
 import './components.css';
 import { ProvideAuth,PrivateRoute,ProtectedPage,LoginPage,AuthButton,useAuth,Stock_AuthButton,To_Deal,Back_To_Platform } from './use-auth';
 import {NameandPassword_Login,YourID} from './login_user';
 import {Endpoint} from '../GlobalEndPoint'
-import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 import {useSelector} from 'react-redux'
 
 
+
+
 export default function Stock_Platform() {
-    /*const [stockname,setStockName] = useState('');
-    const [stocknumber,setStockNumber] = useState('');
-    const [stockprice,setStockPrice] = useState('');*/
+    
     const [item,setItem] = useState('')
     const [buyorsell,setStockBuyorSell] = useState("buy");//true is "buy"
     const [price,setPrice] = useState('')//price of each item
     const [deal,setDeal] = useState(false);
     const [dealmsg,setDealmsg] = useState('');
     const [selectedDate,setSelectDateChange] = useState(new Date());
-    /*const {loading,error,data,subscribeToMore} = useQuery(STOCK_QUERY);
-    const [addStock] = useMutation(CREATE_STOCK_MUTATION)*/
+   
     const classes = useStyles();
     const useContextNameandPassword = useContext(NameandPassword_Login);
     const useContextName = useContextNameandPassword;
@@ -46,7 +44,7 @@ export default function Stock_Platform() {
     //let endpoint = "http://localhost:8080"
 
     const accountUser = useSelector(state => state.login)
-    
+    const subclasses = useheaderStyles();
     
 
     
@@ -114,6 +112,8 @@ export default function Stock_Platform() {
             <li className="navbar-brand active">
                 歡迎來到 {accountUser} 日常收支表
             </li>
+            
+            {/*
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
                     
@@ -127,6 +127,12 @@ export default function Stock_Platform() {
                         <Back_To_Platform/>
                     </li>    
                 </ul>
+            </div>
+            */}
+            <div>
+                <To_Deal/>
+                <Back_To_Platform/>
+                <Stock_AuthButton/>
             </div>
         </nav>
         

@@ -6,6 +6,7 @@ import axios from 'axios'
 import "./components.css"
 import {Endpoint} from '../GlobalEndPoint'
 
+//Redux
 import allAction from "../store/action"
 import {useSelector,useDispatch} from 'react-redux'
 export default function CreateUse() {
@@ -18,6 +19,8 @@ export default function CreateUse() {
     
     const classes = useStyles()
 
+    const accountEmail = useSelector(state => state.email)
+    const accountMoney = useSelector(state => state.initialmoney)
     const dispatch = useDispatch();
     //let endpoint = "http://localhost:8080";
     
@@ -44,7 +47,10 @@ export default function CreateUse() {
                     },
                 }
             ).then((res)=>{
-                
+                dispatch(allAction.createaccount.createEmail(email))
+                dispatch(allAction.createaccount.createMoney(initmoney))
+                console.log("account email: ",accountEmail)
+                console.log("initial money: ",accountMoney)
                 setName('')
                 setPassword('')
                 setEmail('')

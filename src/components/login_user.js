@@ -7,6 +7,7 @@ import { ProvideAuth,PrivateRoute,ProtectedPage,LoginPage,AuthButton,useAuth } f
 import {useStyles} from './decoration/stock_decoration'
 import {Endpoint} from '../GlobalEndPoint'
 
+//Redux
 import allAction from "../store/action"
 import {useSelector,useDispatch} from 'react-redux'
 
@@ -33,6 +34,7 @@ export default function LogInUser(){
     };
     
     const accountUser = useSelector(state => state.login)
+    const accountPassword = useSelector(state => state.password)
     const dispatch = useDispatch()
     //let endpoint = "http://localhost:8080"
     const handleCreate = async (e) => {
@@ -56,7 +58,7 @@ export default function LogInUser(){
                 dispatch(allAction.loginaccount.addLogInAccount(name))
                 dispatch(allAction.loginaccount.addLogInPassword(password))
                 console.log("name: ",accountUser)
-                console.log("password: ",password)
+                console.log("password: ",accountPassword)
             }
             
             setName('')

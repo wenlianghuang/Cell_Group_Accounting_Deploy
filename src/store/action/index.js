@@ -4,9 +4,10 @@
     text
 })*/
 import loginaccount from './loginaccount'
-
+import createaccount from './createaccount'
 const allActions = {
-    loginaccount
+    loginaccount,
+    createaccount
 }
 
 export default allActions;
